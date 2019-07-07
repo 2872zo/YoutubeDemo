@@ -1,17 +1,17 @@
 package com.example.demo;
 
-import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class YoutubeDaoImpl {
 	
 	private final String youtubeAPI = "AIzaSyAnRsFVJgnbKy0IMb8CAo-4seoXBl1lExY";
 	
-	public List<Video> searchVideo(Search search) throws Exception {
+	public YoutubeResponse searchVideo(Search search) throws Exception {
 		HttpConnection httpConnection = new HttpConnection();
 		
 //		String targetUrl = "https://www.googleapis.com/youtube/v3/search?key=" + youtubeAPI + "&part=snippet&q=" + search.getKeyword();
@@ -22,18 +22,11 @@ public class YoutubeDaoImpl {
 		System.out.println("SearchResult : " + searchResult);
 		
 		ObjectMapper objectMapper = new ObjectMapper();
-		Map<String, Object> videoMap = objectMapper.readValue(searchResult, new TypeReference<Map<String, Object>>(){});
+		YoutubeResponse youtubeResponse = objectMapper.readValue(searchResult, YoutubeResponse.class);
 		
-		System.out.println("videoMap : " + videoMap);
-		search.setNextPageToken((String) videoMap.get("nextPageToken"));
-		search.setPrevPageToken((String) videoMap.get("prevPageToken"));
-		search.setRegioncode((String) videoMap.get("regionCode"));
+		//dubug용
+//		System.out.println(youtubeResponse);
 		
-		
-		
-		search.setResultsPerPage(Integer.parseInt((String)((Map)videoMap.get("pageInfo")).get("resultPerPages")));
-		search.setTotalResults(Integer.parseInt((String)((Map)videoMap.get("pageInfo")).get("totalResults")));
-		
-		return null;
+		return youtubeResponse;
 	}
 }

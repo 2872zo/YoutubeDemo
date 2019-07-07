@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -12,8 +13,8 @@ public class YoutubeResponse {
 	private String nextPageToken;
 	private String prevPageToken;
 	private String regionCode;
-	private Map<String, String> pageInfo;
-	private List<Video> items;
+	private PageInfo pageInfo;
+	private Video[] items;
 	
 	public String getKind() {
 		return kind;
@@ -39,29 +40,29 @@ public class YoutubeResponse {
 	public void setPrevPageToken(String prevPageToken) {
 		this.prevPageToken = prevPageToken;
 	}
-	public String getRegioncode() {
+	public String getRegionCode() {
 		return regionCode;
 	}
-	public void setRegioncode(String regioncode) {
-		this.regionCode = regioncode;
+	public void setRegionCode(String regionCode) {
+		this.regionCode = regionCode;
 	}
-	public Map<String, String> getPageInfo() {
+	public PageInfo getPageInfo() {
 		return pageInfo;
 	}
-	public void setPageInfo(Map<String, String> pageInfo) {
+	public void setPageInfo(PageInfo pageInfo) {
 		this.pageInfo = pageInfo;
 	}
-	public List<Video> getItems() {
+	public Video[] getItems() {
 		return items;
 	}
-	public void setItems(List<Video> items) {
+	public void setItems(Video[] items) {
 		this.items = items;
 	}
 	
 	@Override
 	public String toString() {
 		return "YoutubeResponse [kind=" + kind + ", etag=" + etag + ", nextPageToken=" + nextPageToken
-				+ ", prevPageToken=" + prevPageToken + ", regioncode=" + regionCode + ", pageInfo=" + pageInfo
-				+ ", items=" + items + "]";
+				+ ", prevPageToken=" + prevPageToken + ", regionCode=" + regionCode + ", pageInfo=" + pageInfo
+				+ ", items=" + Arrays.toString(items) + "]";
 	}
 }

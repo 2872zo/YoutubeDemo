@@ -1,63 +1,38 @@
 package com.example.demo;
 
-import java.util.Date;
-
 public class Video {
-	private String videoId;
-	private String title;
-	private String description;
-	private String channelTitle;
-	private Date publishedAt;
-	private String thumbnails;
+	private String kind;
+	private String etag;
+	private VideoId id;
+	private Snippet snippet;
 	
-	public Video() {
+	public String getKind() {
+		return kind;
 	}
-
-	public String getVideoId() {
-		return videoId;
+	public void setKind(String kind) {
+		this.kind = kind;
 	}
-
-	public void setVideoId(String videoId) {
-		this.videoId = videoId;
+	public String getEtag() {
+		return etag;
 	}
-
-	public String getTitle() {
-		return title;
+	public void setEtag(String etag) {
+		this.etag = etag;
 	}
-
-	public void setTitle(String title) {
-		this.title = title;
+	public VideoId getId() {
+		return id;
 	}
-
-	public String getDescription() {
-		return description;
+	public void setId(VideoId id) {
+		this.id = id;
 	}
-
-	public void setDescription(String description) {
-		this.description = description;
+	public Snippet getSnippet() {
+		return snippet;
 	}
-
-	public String getChannelTitle() {
-		return channelTitle;
+	public void setSnippet(Snippet snippet) {
+		this.snippet = snippet;
 	}
-
-	public void setChannelTitle(String channelTitle) {
-		this.channelTitle = channelTitle;
-	}
-
-	public Date getPublishedAt() {
-		return publishedAt;
-	}
-
-	public void setPublishedAt(Date publishedAt) {
-		this.publishedAt = publishedAt;
-	}
-
-	public String getThumbnails() {
-		return thumbnails;
-	}
-
-	public void setThumbnails(String thumbnails) {
-		this.thumbnails = thumbnails;
+	
+	@Override
+	public String toString() {
+		return "Video [kind=" + kind + ", etag=" + etag + ", id=" + id + ", snippet=" + snippet + "]";
 	}
 }

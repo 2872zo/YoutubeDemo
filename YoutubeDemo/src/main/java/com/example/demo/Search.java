@@ -44,4 +44,11 @@ public class Search {
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
 	}
+	
+	@Override
+	public String toString() {
+		return "Search [nextPageToken=" + nextPageToken + ", prevPageToken=" + prevPageToken + ", resultsPerPage="
+				+ resultsPerPage + ", totalResults=" + totalResults + ", regioncode=" + regioncode + ", keyword="
+				+ keyword + "]";
+	}
 }
