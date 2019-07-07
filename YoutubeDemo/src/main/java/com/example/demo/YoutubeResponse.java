@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class YoutubeResponse {
@@ -14,6 +15,7 @@ public class YoutubeResponse {
 	private String prevPageToken;
 	private String regionCode;
 	private PageInfo pageInfo;
+	@JsonProperty("items")
 	private Video[] items;
 	
 	public String getKind() {
