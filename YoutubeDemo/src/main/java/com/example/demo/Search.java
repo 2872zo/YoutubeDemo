@@ -3,6 +3,7 @@ package com.example.demo;
 public class Search {
 	private String nextPageToken;
 	private String prevPageToken;
+	private String pageToken; 
 	private int resultsPerPage;
 	private int totalResults;
 	private String regioncode;
@@ -43,6 +44,12 @@ public class Search {
 	}
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
+	}
+	public String getPageToken() {
+		return pageToken;
+	}
+	public void setPageToken(String pageToken) {
+		this.pageToken = pageToken;
 	}
 	
 	@Override

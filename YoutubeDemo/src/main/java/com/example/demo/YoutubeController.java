@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.demo.domain.Video;
+import com.example.demo.domain.YoutubeResponse;
+
 @Controller
 public class YoutubeController {
 

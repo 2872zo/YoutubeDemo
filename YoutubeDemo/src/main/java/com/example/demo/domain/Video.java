@@ -1,4 +1,6 @@
-package com.example.demo;
+package com.example.demo.domain;
+
+import com.example.demo.VideoId;
 
 public class Video {
 	private String kind;
